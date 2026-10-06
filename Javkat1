@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestra Historia 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fff;
+      color: #333;
+      text-align: center;
+    }
+    .section {
+      display: none;
+      padding: 40px;
+    }
+    .section.active {
+      display: block;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    button {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #contador {
+      font-size: 1.5em;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Audio en bucle -->
+  <audio autoplay loop>
+    <source src="Dragonfly - Esclavo de tu amor" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Sección 1 -->
+  <div id="sec1" class="section active">
+    <img src="8305e991-6b14-4f29-aab3-fe38b85129f5" alt="Foto 1">
+    <p>Sin esperarlo todo comenzó a tomar forma, todo lo que quería en alguien lo estaba encontrando.</p>
+    <button onclick="nextSection(2)">Siguiente</button>
+  </div>
+
+  <!-- Sección 2 -->
+  <div id="sec2" class="section">
+    <img src="da43572e-d918-4482-a259-2953cbb35cfd" alt="Foto 2">
+    <p>Cada día más y más me gustaba la idea de estar juntos, y se llegó el día de conocernos y todo avanzó de golpe pero de una forma única.</p>
+    <button onclick="nextSection(3)">Siguiente</button>
+  </div>
+
+  <!-- Sección 3 -->
+  <div id="sec3" class="section">
+    <img src="de00da3e-a201-49a1-93c2-24a8bb2c01ca" <img src=e419b5a1-585c-43bf-8085-d93025ecd1d6 alt="Foto final" id="fotoFinal" style="display: none;">
+    <p>Tú me has cambiado mis días, los haces muy lindos y esto lo quiero para siempre.</p>
+    <button onclick="startCounter()">Acepto 💖</button>
+    <div id="contador"></div>
+  </div>
+
+  <script>
+    function nextSection(num) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById('sec' + num).classList.add('active');
+    }
+
+    function startCounter() {
+      const start = new Date();
+      document.getElementById('fotoFinal').style.display = 'block'; // Mostrar la foto final
+
+      setInterval(() => {
+        const now = new Date();
+        const diff = now - start;
+        const days = Math.floor(diff / (1000 * 60 * 60 *
